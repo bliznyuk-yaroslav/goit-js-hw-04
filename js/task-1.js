@@ -1,22 +1,28 @@
-// 'use strict';
-// function slugify(title){
-//   const titleLover = title.toLowerCase();
-//   const titleSting = titleLover.split(" ");
-// return titleSting.join("-");
-// }
-// console.log(slugify("Arrays for begginers"));
-// console.log(slugify("English for developer"));
-// console.log(slugify("Ten secrets of JavaScript"));
-// console.log(slugify("How to become a JUNIOR developer in TWO WEEKS"));
-
-// // Зроблено для візуально відступу між task при перевіркі
-// console.log(""); 
-function getExtremeScores(scores) {
-const result ={
-  best: Math.max(...scores),
-  worst: Math.min(...scores),
+'use strict';
+function isEnoughCapacity(products, containerSize){
+let totalResult = 0;
+const productValues = Object.values(products);
+for(let product of productValues){
+  totalResult +=product;
 }
-  return result;
-}
+return totalResult <= containerSize;
 
-console.log(getExtremeScores([89, 64, 42, 17, 93, 51, 26]));
+}
+console.log(
+  isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
+);
+
+console.log(
+  isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
+); 
+
+console.log(
+  isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
+); 
+
+console.log(
+  isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
+);
+
+//  Зроблено для візуально відступу між task при перевіркі
+console.log(""); 
